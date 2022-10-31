@@ -10,4 +10,8 @@ public class Position {
         this.y = y;
     }
 
+    public int[] getCoordinates(){
+        return new int[] {x, y};
+    }
+
 }
