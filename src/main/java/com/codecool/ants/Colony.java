@@ -22,19 +22,19 @@ public class Colony {
         ants.add(queen);
     }
 
-    private void generateAnts(int drones, int workers, int soldiers){
+    public void generateAnts(int drones, int workers, int soldiers){
         Random random = new Random();
-        for (int i=1; i<drones; i++){
+        for (int i=0; i<drones; i++){
             Drone newDrone = new Drone(getRandomCoordinate(random));
             ants.add(newDrone);
         }
 
-        for (int i=1; i<workers; i++){
+        for (int i=0; i<workers; i++){
             Worker newWorker = new Worker(getRandomCoordinate(random));
             ants.add(newWorker);
         }
 
-        for (int i=1; i<soldiers; i++){
+        for (int i=0; i<soldiers; i++){
             Soldier newSoldier = new Soldier(getRandomCoordinate(random));
             ants.add(newSoldier);
         }
@@ -59,10 +59,11 @@ public class Colony {
     }
 
     private String getCoordinateSymbol(Position position){
+        String out = ". ";
         for (Ant ant: ants){
-            if ( Arrays.equals(ant.getPosition().getCoordinates(), position.getCoordinates()) ) return ant.getSymbol();
+            if ( Arrays.equals(ant.getPosition().getCoordinates(), position.getCoordinates()) ) out = ant.getSymbol() + " ";
         }
-        return ".";
+        return out;
     }
 
     private Position getRandomCoordinate(Random random){

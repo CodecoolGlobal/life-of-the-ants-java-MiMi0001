@@ -8,4 +8,7 @@ public class Drone extends Ant{
         super(position);
         symbol="D";
     }
+    public void act(){
+    }
+
 }

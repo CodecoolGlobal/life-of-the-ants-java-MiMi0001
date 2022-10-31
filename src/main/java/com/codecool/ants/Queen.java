@@ -7,4 +7,8 @@ public class Queen extends Ant{
         super(position);
         symbol = "Q";
     }
+
+    public void act(){
+
+    }
 }

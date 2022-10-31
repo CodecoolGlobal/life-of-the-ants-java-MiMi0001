@@ -8,4 +8,8 @@ public class Worker extends Ant{
         symbol = "W";
     }
 
+    public void act(){
+
+    }
+
 }

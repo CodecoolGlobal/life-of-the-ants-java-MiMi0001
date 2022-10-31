@@ -8,4 +8,8 @@ public class Soldier extends Ant{
         super(position);
         symbol = "S";
     }
+
+    public void act(){
+
+    }
 }
