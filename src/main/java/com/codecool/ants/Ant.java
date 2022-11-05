@@ -13,7 +13,7 @@ abstract public class Ant {
         this.position = position;
         this.colonyWidth = colonyWidth;
     }
-    abstract public void act();
+    abstract public void act() throws MatingException;
 
     public Position getPosition() {
         return position;

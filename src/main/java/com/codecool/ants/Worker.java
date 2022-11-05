@@ -11,6 +11,6 @@ public class Worker extends Ant{
 
     public void act(){
         Direction direction = Direction.getRandomDirection();
-        position = position.moveToDirection(direction);
+        position = position.moveToDirection(direction, 1);
     }
 }

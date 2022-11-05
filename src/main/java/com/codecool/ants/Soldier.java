@@ -14,7 +14,7 @@ public class Soldier extends Ant{
     }
 
     public void act(){
-        position = position.moveToDirection(direction);
+        position = position.moveToDirection(direction, 1);
         direction = direction.turnLeft();
     }
 }

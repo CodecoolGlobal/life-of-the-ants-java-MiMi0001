@@ -12,6 +12,7 @@ public enum Direction {
 
         private int offsetX;
         private  int offsetY;
+        static Random random = new Random();
 
         Direction (int offsetX, int offsetY){
             this.offsetX = offsetX;
@@ -19,7 +20,6 @@ public enum Direction {
         }
 
         public static Direction getRandomDirection(){
-            Random random = new Random();
             int randomDirection = random.nextInt(4);
             Direction result = null;
             switch (randomDirection){

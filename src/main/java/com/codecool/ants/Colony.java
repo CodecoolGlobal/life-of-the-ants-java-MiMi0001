@@ -12,6 +12,7 @@ public class Colony {
     ArrayList<Ant> ants;
 
     Position queenPosition;
+    Queen queen;
 
     public Colony(int colonyWidth){
         this.colonyWidth = colonyWidth;
@@ -19,14 +20,14 @@ public class Colony {
 
         int center = (int)Math.ceil(colonyWidth / 2.0)-1;
         queenPosition=new Position(colonyWidth, center, center);
-        Queen queen = new Queen(colonyWidth, queenPosition);
+        queen = new Queen(colonyWidth, queenPosition);
         ants.add(queen);
     }
 
     public void generateAnts(int drones, int workers, int soldiers){
         Random random = new Random();
         for (int i=0; i<drones; i++){
-            Drone newDrone = new Drone(colonyWidth, queenPosition, getRandomCoordinate(random));
+            Drone newDrone = new Drone(colonyWidth, queenPosition, queen, getRandomCoordinate(random));
             ants.add(newDrone);
         }
 
@@ -43,7 +44,12 @@ public class Colony {
 
     public void update(){
         for (Ant ant: ants){
-            ant.act();
+            try {
+                ant.act();
+            }
+            catch (MatingException e){
+                System.out.println(e.getMessage());
+            }
         }
     }
 

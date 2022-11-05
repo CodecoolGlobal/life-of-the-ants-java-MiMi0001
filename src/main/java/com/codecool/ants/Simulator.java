@@ -14,11 +14,12 @@ public class Simulator {
         boolean running = true;
         do {
             colony.display();
-            colony.update();
             System.out.println("Press Enter to continue, q to quit");
 
             String pressed = scanner.nextLine();
             if (pressed.toLowerCase().equals("q")) running =false;
+
+            colony.update();
             System.out.println("\033[H\033[2J");
         } while (running);
         System.out.println("Have a nice day! Good bye!");

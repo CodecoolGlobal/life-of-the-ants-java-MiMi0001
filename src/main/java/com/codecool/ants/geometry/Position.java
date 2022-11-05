@@ -24,10 +24,11 @@ public class Position {
         return y;
     }
 
-    public Position moveToDirection(Direction direction){
+    public Position moveToDirection(Direction direction, int moves){
         Position out;
-        Position newPosition = new Position( colonyWidth, (x+direction.getOffset()[0]), (y+direction.getOffset()[1]) );
-        if (newPosition.getX()< colonyWidth && newPosition.getY() < colonyWidth) out = newPosition;
+        Position newPosition = new Position( colonyWidth, ( x+(moves*direction.getOffset()[0]) ), ( y+(moves*direction.getOffset()[1]) ) );
+        if (newPosition.getX() < colonyWidth && newPosition.getY() < colonyWidth
+            && newPosition.getX() >= 0 && newPosition.getY() >= 0) out = newPosition;
         else out = this;
         return out;
     }
