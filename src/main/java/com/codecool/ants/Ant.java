@@ -7,9 +7,11 @@ abstract public class Ant {
     protected Position position;
 
     protected String symbol;
+    protected final int colonyWidth;
 
-    public Ant(Position position){
+    public Ant(int colonyWidth, Position position){
         this.position = position;
+        this.colonyWidth = colonyWidth;
     }
     abstract public void act();
 
@@ -20,5 +22,4 @@ abstract public class Ant {
     public String getSymbol(){
         return symbol;
     }
-
 }

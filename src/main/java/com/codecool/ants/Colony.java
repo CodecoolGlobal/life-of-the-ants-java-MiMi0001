@@ -8,34 +8,35 @@ import java.util.Random;
 
 public class Colony {
 
-    private int width;
+    private int colonyWidth;
     ArrayList<Ant> ants;
 
+    Position queenPosition;
 
-    public Colony(int width){
-        this.width = width;
+    public Colony(int colonyWidth){
+        this.colonyWidth = colonyWidth;
         ants = new ArrayList<Ant>();
 
-        int center = (int)Math.ceil(width / 2.0)-1;
-        Position queenPosition=new Position(center, center);
-        Queen queen = new Queen(queenPosition);
+        int center = (int)Math.ceil(colonyWidth / 2.0)-1;
+        queenPosition=new Position(colonyWidth, center, center);
+        Queen queen = new Queen(colonyWidth, queenPosition);
         ants.add(queen);
     }
 
     public void generateAnts(int drones, int workers, int soldiers){
         Random random = new Random();
         for (int i=0; i<drones; i++){
-            Drone newDrone = new Drone(getRandomCoordinate(random));
+            Drone newDrone = new Drone(colonyWidth, queenPosition, getRandomCoordinate(random));
             ants.add(newDrone);
         }
 
         for (int i=0; i<workers; i++){
-            Worker newWorker = new Worker(getRandomCoordinate(random));
+            Worker newWorker = new Worker(colonyWidth, getRandomCoordinate(random));
             ants.add(newWorker);
         }
 
         for (int i=0; i<soldiers; i++){
-            Soldier newSoldier = new Soldier(getRandomCoordinate(random));
+            Soldier newSoldier = new Soldier(colonyWidth, getRandomCoordinate(random));
             ants.add(newSoldier);
         }
     }
@@ -48,9 +49,9 @@ public class Colony {
 
     public void display(){
         String out = "";
-        for (int y=0; y<width; y++){
-            for (int x=0; x<width; x++){
-                Position currentPosition = new Position(x,y);
+        for (int y = 0; y< colonyWidth; y++){
+            for (int x = 0; x< colonyWidth; x++){
+                Position currentPosition = new Position(colonyWidth, x,y);
                 out += getCoordinateSymbol(currentPosition);
             }
             out += "\n";
@@ -67,8 +68,8 @@ public class Colony {
     }
 
     private Position getRandomCoordinate(Random random){
-        int x = random.nextInt(width);
-        int y = random.nextInt(width);
-        return new Position(x, y);
+        int x = random.nextInt(colonyWidth);
+        int y = random.nextInt(colonyWidth);
+        return new Position(colonyWidth, x, y);
     }
 }

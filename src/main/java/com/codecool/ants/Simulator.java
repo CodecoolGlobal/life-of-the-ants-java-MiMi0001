@@ -19,6 +19,7 @@ public class Simulator {
 
             String pressed = scanner.nextLine();
             if (pressed.toLowerCase().equals("q")) running =false;
+            System.out.println("\033[H\033[2J");
         } while (running);
         System.out.println("Have a nice day! Good bye!");
     }
