@@ -9,10 +9,10 @@ import java.util.Random;
 public class Colony {
 
     private int colonyWidth;
-    ArrayList<Ant> ants;
+    private ArrayList<Ant> ants;
 
-    Position queenPosition;
-    Queen queen;
+    private Position queenPosition;
+    private Queen queen;
 
     public Colony(int colonyWidth){
         this.colonyWidth = colonyWidth;
