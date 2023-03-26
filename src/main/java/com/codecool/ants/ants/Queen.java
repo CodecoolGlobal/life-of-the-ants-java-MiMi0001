@@ -1,11 +1,13 @@
-package com.codecool.ants;
+package com.codecool.ants.ants;
 
+import com.codecool.ants.ants.Ant;
 import com.codecool.ants.geometry.Position;
 
 import java.util.Random;
 
-public class Queen extends Ant{
+public class Queen extends Ant {
     int matingMood;
+
     public Queen(int colonyWidth, Position position){
         super(colonyWidth, position);
         symbol = "Q";

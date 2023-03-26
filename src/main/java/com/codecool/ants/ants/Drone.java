@@ -1,14 +1,16 @@
-package com.codecool.ants;
+package com.codecool.ants.ants;
 
+import com.codecool.ants.MatingException;
+import com.codecool.ants.ants.Ant;
+import com.codecool.ants.ants.Queen;
 import com.codecool.ants.geometry.Direction;
 import com.codecool.ants.geometry.Position;
 
 import java.util.Arrays;
 
-public class Drone extends Ant{
+public class Drone extends Ant {
 
     private Position queenPosition;
-
     Queen queen;
     int matingTurnsLeft = 0;
 
@@ -18,7 +20,8 @@ public class Drone extends Ant{
         this.queen = queen;
         symbol = "D";
     }
-    public void act() throws MatingException{
+
+    public void act() throws MatingException {
         if ( Arrays.equals(position.getCoordinates(), queenPosition.getCoordinates()) ) {
             if (queen.mating()) {
                 matingTurnsLeft = 9;

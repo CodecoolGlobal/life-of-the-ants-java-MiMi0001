@@ -1,7 +1,5 @@
 package com.codecool.ants.geometry;
 
-import com.codecool.ants.Soldier;
-
 import java.util.Random;
 
 public enum Direction {

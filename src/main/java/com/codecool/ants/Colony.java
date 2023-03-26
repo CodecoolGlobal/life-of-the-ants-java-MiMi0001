@@ -1,5 +1,6 @@
 package com.codecool.ants;
 
+import com.codecool.ants.ants.*;
 import com.codecool.ants.geometry.Position;
 
 import java.util.ArrayList;

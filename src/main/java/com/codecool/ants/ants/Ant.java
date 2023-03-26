@@ -1,11 +1,11 @@
-package com.codecool.ants;
+package com.codecool.ants.ants;
 
+import com.codecool.ants.MatingException;
 import com.codecool.ants.geometry.Position;
 
 abstract public class Ant {
 
     protected Position position;
-
     protected String symbol;
     protected final int colonyWidth;
 
@@ -13,6 +13,7 @@ abstract public class Ant {
         this.position = position;
         this.colonyWidth = colonyWidth;
     }
+
     abstract public void act() throws MatingException;
 
     public Position getPosition() {

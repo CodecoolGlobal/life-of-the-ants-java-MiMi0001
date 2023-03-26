@@ -1,9 +1,10 @@
-package com.codecool.ants;
+package com.codecool.ants.ants;
 
+import com.codecool.ants.ants.Ant;
 import com.codecool.ants.geometry.Direction;
 import com.codecool.ants.geometry.Position;
 
-public class Soldier extends Ant{
+public class Soldier extends Ant {
 
     private Direction direction;
 
